@@ -70,6 +70,7 @@ class DiscountProductsView(APIView):
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
+
 class DiscountListView(ListAPIView):
     queryset = Discount.objects.all()
     permission_classes = (AllowAny, )
