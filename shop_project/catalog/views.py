@@ -54,6 +54,21 @@ class ProducerProductsView(APIView):
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
+class DiscountListView(ListAPIView):
+    queryset = Discount.objects.all()
+    permission_classes = (AllowAny, )
+    serializer_class = DiscountSerializer
+
+class DiscountProductsView(APIView):
+    permission_classes = (AllowAny, )
+
+    def get(self, request, discount_id):
+        if discount_id == 0:
+            queryset = Product.objects.filter(discount=None)
+        elif discount_id > 0:
+            queryset = Product.objects.filter(discount__id=discount_id)
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 class DiscountListView(ListAPIView):
     queryset = Discount.objects.all()
