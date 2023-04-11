@@ -1,0 +1,30 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "Banana",
+        "price": "10.00",
+        "count_on_stock": 1000,
+        "articul": "1234567",
+        "description": "askdja-dknv",
+        "discount": null,
+        "category": 1,
+        "producer": 2
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Potato",
+        "price": "12.00",
+        "count_on_stock": 12000,
+        "articul": "1234566",
+        "description": "bulba",
+        "discount": 1,
+        "category": 2,
+        "producer": 1
+    }
+}
+]
